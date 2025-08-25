@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>每日灵修播客</title>
+    <link>https://yourname.pages.dev</link>
+    <description>每天分享灵修</description>
+    <language>zh-cn</language>
+
+    <item>
+      <title>第1期：信心的功课</title>
+      <enclosure url="https://yourname.pages.dev/audio/episode1.mp3" type="audio/mpeg"/>
+      <guid>1</guid>
+      <pubDate>Mon, 26 Aug 2025 00:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>第2期：盼望的力量</title>
+      <enclosure url="https://yourname.pages.dev/audio/episode2.mp3" type="audio/mpeg"/>
+      <guid>2</guid>
+      <pubDate>Tue, 27 Aug 2025 00:00:00 +0800</pubDate>
+    </item>
+  </channel>
+</rss>
