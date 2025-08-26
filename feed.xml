@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>每日灵修播客</title>
+    <title>小弟的播客</title>
     <link>https://yourname.pages.dev</link>
-    <description>每天分享灵修</description>
+    <description>小弟的播客</description>
     <language>zh-cn</language>
 
     <!-- 最新的放在最前 -->
@@ -31,4 +31,5 @@
 
   </channel>
 </rss>
+
 
