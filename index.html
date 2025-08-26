@@ -30,16 +30,23 @@
 
   .episode { 
     margin-bottom: 20px; 
-    padding: 15px;                 /* 内边距稍微增加 */
+    padding: 15px;                 /* 内边距  */
     background: #fff;               /* 白色背景 */
     border-radius: 10px;            /* 圆角 */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 阴影 */
-    max-width: 600px;               /* 最大宽度 */
-    width: 90%;                     /* 最大宽度 */
-    margin-left: auto; 
-    margin-right: auto;             /* 居中显示 */
-    text-align: center;             /* 页面宽度自适应 */
+    max-width: none;               /* 不限制最大宽度 */
+    width: 98%;                     /* 更接近屏幕宽度 */
+    margin-left: auto;              /* 居中并留一点上下间距 */
+    margin-right: auto;             /* 居中并留一点上下间距 */
+    text-align: center;             /* 音频控件居中 */
   }
+
+ /* 响应式优化：大屏幕下 */ 
+@media (min-width: 800px) {
+  .episode {
+    width: 90%;  /* 大屏保持一点边距 */
+  }
+}
 
   /* 响应式优化：小屏幕下 */
   @media (max-width: 400px) {
@@ -74,4 +81,5 @@
   <p><a href="feed.xml">订阅 RSS</a></p>
 </body>
 </html>
+
 
