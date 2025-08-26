@@ -1,53 +1,76 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>音频示例页面</title>
-  <link rel="stylesheet" href="style.css">
+  <title>每日灵修播客</title>
   <style>
-    /* 全局样式，可直接写在 style.css 中 */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;  /* 页面背景 */
-      margin: 0;
-      padding: 20px;
-    }
+   <style>
+  body { 
+    font-family: "Microsoft YaHei", sans-serif; 
+    max-width: 700px; 
+    margin: 2em auto; 
+    padding: 10px; 
+    background: #f9f9f9; 
+  }
 
-    .audio-container {
-      width: 90%;             /* 页面宽度自适应 */
-      max-width: 600px;       /* 最大宽度限制 */
-      margin: 20px auto;      /* 上下间距 + 居中 */
-      padding: 15px;          /* 内边距，让内容不紧贴边框 */
-      background-color: #fff; /* 白色背景 */
-      border-radius: 10px;    /* 圆角效果 */
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* 阴影，提升视觉层次 */
-      text-align: center;     /* 音频控件居中 */
-    }
+  h1 { 
+    color: #333; 
+    text-align: center;
+  }
 
-    audio {
-      width: 100%;  /* 音频控件填满白框宽度 */
-      outline: none;
-    }
+  p { 
+    text-align: center; 
+  }
 
-    /* 响应式优化：小屏幕额外调整 */
-    @media (max-width: 400px) {
-      .audio-container {
-        padding: 10px;
-      }
+  audio { 
+    margin: 10px 0; 
+    width: 100%; 
+    outline: none; 
+  }
+
+  .episode { 
+    margin-bottom: 20px; 
+    padding: 15px;                 /* 内边距稍微增加 */
+    background: #fff;               /* 白色背景 */
+    border-radius: 10px;            /* 圆角 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 阴影 */
+    max-width: 600px;               /* 最大宽度 */
+    width: 90%;                     /* 页面宽度自适应 */
+    margin-left: auto; 
+    margin-right: auto;             /* 居中显示 */
+    text-align: center;             /* 音频控件居中 */
+  }
+
+  /* 响应式优化：小屏幕下 */
+  @media (max-width: 400px) {
+    .episode {
+      padding: 10px;
     }
+  }
+</style>
+
   </style>
 </head>
 <body>
+  <h1>每日灵修播客</h1>
+  <p>欢迎收听，每天更新一篇灵修音频</p>
 
-  <h2>每日灵修音频</h2>
-
-  <div class="audio-container">
+  <div class="episode">
+    <h3>第183期：2025-08-26 得 3:18</h3>
     <audio controls>
-      <source src="audio.mp3" type="audio/mpeg">
-      您的浏览器不支持音频播放。
+      <source src="audio/episode182.mp3" type="audio/mpeg">
+      您的浏览器不支持播放音频。
     </audio>
   </div>
 
+  <div class="episode">
+    <h3>第182期：2025-08-25 得 3:5</h3>
+    <audio controls>
+      <source src="audio/episode183.mp3" type="audio/mpeg">
+      您的浏览器不支持播放音频。
+    </audio>
+  </div>
+
+  <p><a href="feed.xml">订阅 RSS</a></p>
 </body>
 </html>
