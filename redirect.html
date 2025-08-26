@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>跳转到播客</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+        .tips {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+        .warning {
+            background: rgba(255, 152, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🎧 欢迎访问我的播客 🎵</h2>
+        <p>点击下方按钮进入播客网站</p>
+        
+        <div class="warning">
+            <strong>⚠️ 微信用户请注意：</strong><br>
+            由于某些‘原因’，需要手动点击按钮跳转
+        </div>
+        
+        <button class="btn" onclick="directJump()">
+            🚀 立即进入播客网站
+        </button>
+        
+        <div class="tips">
+            <p>📱 如果跳转失败，请复制网址 https://my-podcast-site.pages.dev/ 选择"在浏览器打开"</p>
+            <p>🎵 准备好享受精彩的播客内容吧！</p>
+        </div>
+    </div>
+
+    <script>
+        function directJump() {
+            // 尝试直接跳转
+            try {
+                window.location.href = "https://my-podcast-site.pages.dev/";
+            } catch (e) {
+                // 如果跳转失败，显示提示
+                alert('跳转失败，请复制网址在浏览器中打开：\nhttps://my-podcast-site.pages.dev/');
+            }
+        }
+        
+        // 移除所有自动跳转相关的代码
+        // 只有点击按钮才会触发跳转
+    </script>
+</body>
+</html>
