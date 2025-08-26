@@ -6,18 +6,21 @@
     <description>每天分享灵修</description>
     <language>zh-cn</language>
 
+    <!-- 最新的放在最前 -->
     <item>
       <title>第183期 2025年8月26日星期二 得3:18</title>
+      <enclosure url="https://yourname.pages.dev/audio/episode2.mp3" type="audio/mpeg"/>
+      <guid>2</guid>
+      <pubDate>Tue, 27 Aug 2025 00:00:00 +0800</pubDate>
+    </item>
+
+    <!-- 较旧的在后 -->
+    <item>
+      <title>第182期 2025年8月25日星期一 得3:5</title>
       <enclosure url="https://yourname.pages.dev/audio/episode1.mp3" type="audio/mpeg"/>
       <guid>1</guid>
       <pubDate>Mon, 26 Aug 2025 00:00:00 +0800</pubDate>
     </item>
 
-    <item>
-      <title>第182期 2025年8月25日星期一 得3:5</title>
-      <enclosure url="https://yourname.pages.dev/audio/episode2.mp3" type="audio/mpeg"/>
-      <guid>2</guid>
-      <pubDate>Tue, 27 Aug 2025 00:00:00 +0800</pubDate>
-    </item>
   </channel>
 </rss>
