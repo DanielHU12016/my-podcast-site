@@ -3,83 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <title>每日灵修播客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-   <style>
-  body { 
-    font-family: "Microsoft YaHei", sans-serif; 
-    max-width: 700px; 
-    margin: 2em auto; 
-    padding: 10px; 
-    background: #f9f9f9; 
-  }
-
-  h1 { 
-    color: #333; 
-    text-align: center;
-  }
-
-  p { 
-    text-align: center; 
-  }
-
-  audio { 
-    margin: 10px 0; 
-    width: 100%; 
-    outline: none; 
-  }
-
-  .episode { 
-    margin-bottom: 20px; 
-    padding: 15px;                 /* 内边距  */
-    background: #fff;               /* 白色背景 */
-    border-radius: 10px;            /* 圆角 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 阴影 */
-    max-width: none;               /* 不限制最大宽度 */
-    width: 98%;                     /* 更接近屏幕宽度 */
-    margin-left: auto;              /* 居中并留一点上下间距 */
-    margin-right: auto;             /* 居中并留一点上下间距 */
-    text-align: center;             /* 音频控件居中 */
-  }
-
- /* 响应式优化：大屏幕下 */ 
-@media (min-width: 800px) {
-  .episode {
-    width: 90%;  /* 大屏保持一点边距 */
-  }
-}
-
-  /* 响应式优化：小屏幕下 */
-  @media (max-width: 400px) {
-    .episode {
-      padding: 10px;
+    body { 
+      font-family: "Microsoft YaHei", sans-serif; 
+      margin: 0; 
+      padding: 20px; 
+      background: #f9f9f9;
+      text-align: center;
     }
-  }
-</style>
 
+    h1 { 
+      color: #333; 
+    }
+
+    p { 
+      text-align: center; 
+    }
+
+    .episode { 
+      width: 98%;               
+      max-width: none;          
+      margin: 20px auto;        
+      padding: 15px;            
+      background: #fff;         
+      border-radius: 10px;      
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;       
+    }
+
+    /* 隐藏原生 audio 控件 */
+    audio {
+      display: none;
+    }
+
+    /* 自定义控件样式 */
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .play-btn {
+      background: #4CAF50;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .play-btn.paused {
+      background: #f44336;
+    }
+
+    .progress-container {
+      flex-grow: 1;
+      height: 10px;
+      background: #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: #4CAF50;
+      border-radius: 5px;
+    }
+
+    .time {
+      font-size: 14px;
+      min-width: 50px;
+    }
+
+    @media (max-width: 500px) {
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .time {
+        text-align: right;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>每日灵修播客</h1>
   <p>欢迎收听，每天更新一篇灵修音频</p>
 
+  <!-- 第183期 -->
   <div class="episode">
     <h3>第183期：2025-08-26 得 3:18</h3>
-    <audio controls>
-      <source src="audio/episode182.mp3" type="audio/mpeg">
-      您的浏览器不支持播放音频。
-    </audio>
+    <audio id="audio183" src="audio/episode182.mp3"></audio>
+    <div class="controls">
+      <button class="play-btn" data-audio="audio183">播放</button>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <div class="time">0:00</div>
+    </div>
   </div>
 
+  <!-- 第182期 -->
   <div class="episode">
     <h3>第182期：2025-08-25 得 3:5</h3>
-    <audio controls>
-      <source src="audio/episode183.mp3" type="audio/mpeg">
-      您的浏览器不支持播放音频。
-    </audio>
+    <audio id="audio182" src="audio/episode183.mp3"></audio>
+    <div class="controls">
+      <button class="play-btn" data-audio="audio182">播放</button>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <div class="time">0:00</div>
+    </div>
   </div>
 
-  <p><a href="feed.xml">订阅 RSS</a></p>
+  <p style="text-align:center;"><a href="feed.xml">订阅 RSS</a></p>
+
+  <script>
+    // 为每个自定义控件绑定事件
+    document.querySelectorAll('.episode').forEach(ep => {
+      const audioEl = ep.querySelector('audio');
+      const playBtn = ep.querySelector('.play-btn');
+      const progressContainer = ep.querySelector('.progress-container');
+      const progress = ep.querySelector('.progress');
+      const time = ep.querySelector('.time');
+
+      playBtn.addEventListener('click', () => {
+        if (audioEl.paused) {
+          audioEl.play();
+          playBtn.textContent = '暂停';
+        } else {
+          audioEl.pause();
+          playBtn.textContent = '播放';
+        }
+      });
+
+      audioEl.addEventListener('timeupdate', () => {
+        const percent = (audioEl.currentTime / audioEl.duration) * 100;
+        progress.style.width = percent + '%';
+
+        const minutes = Math.floor(audioEl.currentTime / 60);
+        const seconds = Math.floor(audioEl.currentTime % 60);
+        time.textContent = `${minutes}:${seconds < 10 ? '0'+seconds : seconds}`;
+      });
+
+      progressContainer.addEventListener('click', (e) => {
+        const rect = progressContainer.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        audioEl.currentTime = percent * audioEl.duration;
+      });
+    });
+  </script>
 </body>
 </html>
-
-
