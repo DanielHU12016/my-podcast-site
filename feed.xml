@@ -7,6 +7,13 @@
     <language>zh-cn</language>
 
     <!-- 最新的放在最前 -->
+ <item>
+      <title>第184期 2025年8月27日星期三 得4:5</title>
+      <enclosure url="https://yourname.pages.dev/audio/episode3.mp3" type="audio/mpeg"/>
+      <guid>2</guid>
+      <pubDate>Tue, 27 Aug 2025 00:00:00 +0800</pubDate>
+    </item>
+    
     <item>
       <title>第183期 2025年8月26日星期二 得3:18</title>
       <enclosure url="https://yourname.pages.dev/audio/episode2.mp3" type="audio/mpeg"/>
@@ -24,3 +31,4 @@
 
   </channel>
 </rss>
+
