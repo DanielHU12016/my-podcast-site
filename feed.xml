@@ -8,6 +8,13 @@
 
     <!-- 最新的放在最前 -->
     <item>
+      <title>第188期 2025年9月1日星期一 撒上1:18</title>
+      <enclosure url="https://yourname.pages.dev/audio/episode7.mp3" type="audio/mpeg"/>
+      <guid>2</guid>
+      <pubDate>Tue, 27 Aug 2025 00:00:00 +0800</pubDate>
+    </item>   
+    
+    <item>
       <title>第187期 2025年8月30日星期六 得4:21-22</title>
       <enclosure url="https://yourname.pages.dev/audio/episode6.mp3" type="audio/mpeg"/>
       <guid>2</guid>
@@ -52,6 +59,7 @@
 
   </channel>
 </rss>
+
 
 
 
