@@ -7,6 +7,13 @@
     <language>zh-cn</language>
 
     <!-- 最新的放在最前 -->
+    <item>
+      <title>第210期 2025年9月29日星期一 撒上17:47</title>
+      <enclosure url="https://yourname.pages.dev/audio/episode29.mp3" type="audio/mpeg"/>
+      <guid>2</guid>
+      <pubDate>Tue, 27 Aug 2025 00:00:00 +0800</pubDate>
+    </item>   
+    
      <item>
       <title>第209期 2025年9月27日星期六 撒上16:23</title>
       <enclosure url="https://yourname.pages.dev/audio/episode28.mp3" type="audio/mpeg"/>
@@ -206,6 +213,7 @@
 
   </channel>
 </rss>
+
 
 
 
